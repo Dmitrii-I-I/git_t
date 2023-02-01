@@ -6,5 +6,3 @@ if (Number > 99 and Number < 1000):
     Summa_number = Number % 10 + Number // 10 % 10 + Number // 100
     print(f'Сумма цифр: {Summa_number}')
 else: print('Число не трехзначное!')
-
-
