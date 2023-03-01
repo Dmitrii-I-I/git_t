@@ -1,6 +1,6 @@
 class View():
-    def __init__(self, choice: int = 0):
-        self.choice = choice
+    def __init__(self):
+        self.choice = None
 
     def menu(self):
         print('''\nГлавное меню:
@@ -55,3 +55,12 @@ class View():
     def confirm_changes(self):
         answer = input('У вас есть несохраненные изменения, хотите их сохранить? (д/н) ')
         return True if answer == 'д' else False
+    def edit_contact_input(self, all_rec: list, ind: int) -> dict:
+        name = input('Введите имя и фамилию (Enter без изменений): ')
+        phone = input('Введите номер телефона (Enter без изменений): ')
+        comment = input('Введите комментарий (Enter без изменений): ')
+        new_contact = {'name': name if name else all_rec[ind - 1].get('name'),
+                       'phone': phone if phone else all_rec[ind - 1].get('phone'),
+                       'comment': comment if comment else all_rec[ind - 1].get('comment')}
+        print(new_contact)
+        return new_contact

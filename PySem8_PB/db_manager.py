@@ -12,6 +12,8 @@ def open_file():
         data = file.readlines()
         for contact in data:
             new = contact.strip().split(';')
+            print(type(new))
+            print(new)
             new_contact = {}
             new_contact['name'] = new[0]
             new_contact['phone'] = new[1]
